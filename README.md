@@ -1,15 +1,14 @@
-Makefile:
-Part1A: make part1a
-Part1B: make part1b. The method I used in main was just the static caller, EncrypyMT("abc",3);
+PROGRAM DESCRIPTION: 
 
-Conceptual Question:
-It will take 4*charTime+overhead.  This is because 2 turtles will draw two letters at the same time, so 2 letters now take the time of one letter, or one charTime. Therefore, the time of 8 letters is considered as one turtle drawing a 4 letter string. This would be 4*charTime. The overhead is then added since it is serial. 
+The main file worked on here was Gui2048.java. The other two files, Board.java and Constants2048.java were givens. Though the board file was an updated version of my psa3 file. Anyways, the file Gui2048 handles the user interface of the game. Basically, the pretty colors and shapes to make the game more appealing to play. Without going into the specifics, there are certain methods implemented in the file to make squares for the tiles with printed numbers on each tile. The same goes for all the text and colors that are displayed during the games playthroughs. It was pretty hard to test this file since my board.java file was pretty bad...I got a low score on it since it didn't work that well. Therefore I had to work a bit on the Board.java file first before touching the majority of my interface. Still, I was able to see the majority of the functions work by changing Board.java in different ways. 
 
-Pointer Questions:
-One of the main benefits I saw was that you only needed to save one node, since that node had the next nodes data and so on. This means that if you want to delete a row, you just need to save the data of the start and end. There is no need to loop through all the nodes and re input them into the string builder. Another benefit was that it was simple to traverse through since each node contained another pointer. It was also easy to know the end since the next pointer would be null if it were the end node.  
+SHORT RESPONSE:
 
-I would consider making a counter variable that increases everytime the nextNode is the same character. Then I would use this counter to repeat itself. Also, I would make the pointer have a counter that would increase when the .getLetter method returns the same current letter. So my main answer would be something like while(currNode.nextNode.getLetter() != currNode.getLetter(){counter++;
+-UNIX/LINUX-
+1. mkdir -p fooDir/barDir
+2. ls *.java will look for all of the files in the directory that are java files.  
+3. use the line vim *.java. This *.java generally works for everything such as compiling all of the files.
 
-
-Design Decision:
-I used loops because it made more sense to me. By this I mean that I treated it much like traversing through a normal string. Instead of charAt() in a normal string, I used getLetter() and nextNode to continue the loop. The benfit of this technique is how easy it is since for and while loops have been the backbone of cse8a and 8b so far. A consequence is how much you have to repeat the loop and keeping track of the variables and iteration/conditions. The benefit of recursion is its simplicity. Recursion wouldn't require as much lines of code to be writter and would be generally easy to follow if executed correctly. The consquence is executing it correctly. I personally struggle with recursion and would find this technique a bit hard to implement in MSB. The recursion would require a specific condition with the pointers, which I think would be harder than just making a for loop with a nextNode pointer or a while loop that loops while the pointer is not null. 
+-JAVA-
+4. Static means that the method can be called without an instance of a class. So a method named "static" could be called as static(). It does not need anything before it. 
+5. She can make all of the shapes and/or colors different classes that extend from a main shap class. This would be similar to our psa about shapes and drawing. It'd be more organized and easier to call upon in different files that don't need to rely on the shapes. 
